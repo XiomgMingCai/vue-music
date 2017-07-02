@@ -1,14 +1,18 @@
 <template>
-  <div class='header'>
-    <header>
-      我是header
-    </header>
+  <div class='liading'>
+    <img width="24" height="24" src="./loading.gif" alt="加载...">
+
+    <p class="desc">{{title}}</p>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   // import logHeader from './log-header.vue'
   export default{
+    props: {
+      title: String,
+      default: '正在载入...'
+    },
     data() {
       return {}
     },
@@ -23,19 +27,13 @@
 </script>
 
 <style lang="less" scoped type="text/less" rel="stylesheet/less">
-  /*@import '../../assets/css/variable.less';*/
-
-  .header {
-    z-index: 10;
+  .liading {
     width: 100%;
-    position: fixed;
-    top: 0;
-    header {
-      height: .45rem;
-      line-height: .45rem;
-      background-color: #9bdc54;
-      text-align: center;
-      font-size: .2rem;
+    text-align: center;
+    .desc{
+      line-height: 20px;
+      font-size: .15rem;
+      color: #000;
     }
   }
 </style>
